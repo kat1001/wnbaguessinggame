@@ -141,6 +141,14 @@ body {
   transition: filter 0.09s ease;
 }
 
+#player-image.silhouette {
+  filter: brightness(0) saturate(0) opacity(0.85);
+}
+
+#player-image.blurred {
+  filter: blur(10px);
+}
+
 #player-guess {
   width: 100%;
   padding: 14px 16px;
@@ -191,6 +199,11 @@ body {
   transition: transform 0.15s ease, background 0.2s ease;
 }
 
+.mode-row {
+  justify-content: center;
+  margin-top: 14px;
+}
+
 .button-row button:hover {
   background: var(--burnt-orange);
   transform: translateY(-1px);
@@ -198,6 +211,73 @@ body {
 
 .button-row button:active {
   transform: translateY(0);
+}
+
+.mode-row {
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.timer-display {
+  margin-top: 12px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.leaderboard-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.leaderboard-content {
+  width: 100%;
+  max-width: 700px;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.leaderboard-content h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+#daily-score-summary {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+#leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.leaderboard-row {
+  display: grid;
+  grid-template-columns: 60px 1.3fr 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f4f4f4;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  align-items: center;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .status-section {
@@ -222,10 +302,17 @@ body {
 
 .feedback-row {
   display: grid;
-  grid-template-columns: 180px repeat(7, 130px);
+  grid-template-columns: 180px repeat(8, 130px);
   gap: 10px;
   margin-bottom: 10px;
   min-width: 1100px;
+}
+
+.input-correct {
+  border: 2px solid #4CAF50;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  font-weight: 800;
 }
 
 .cell {

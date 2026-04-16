@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WNBA Guessing Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-container">
+
+    <header class="main-header">
+      <h1>WNBA Guessing Game</h1>
+      <p class="subtitle">Guess the hidden WNBA player!</p>
+
+      <div class="button-row mode-row">
+        <button id="mode-toggle-btn">Mode: Daily</button>
+    </div>
+    <p id="timer-display" class="timer-display">Time: 00:00</p>
+    </header>
+
+    <main class="game-container">
+
+      <section class="instructions-section">
+        <h2>How to Play</h2>
+        <p>
+          Enter the name of a WNBA player. After each guess, the grid will show how close
+          your guess is .
+        </p>
+        <p>
+          Green means correct. Yellow means close. Red means incorrect.
+        </p>
+      </section>
+
+      <section class="image-section">
+        <div class="image-box">
+          <img id="player-image" src="" alt="Player hint or portrait" />
+          <p id="image-caption">Press hint to reveal a visual hint.</p>
+        </div>
+      </section>
+
+      <section class="controls-section">
+        <div class="guess-controls">
+          <label for="player-guess">Enter a player name:</label>
+          <input
+            type="text"
+            id="player-guess"
+            name="player-guess"
+            placeholder="Type a WNBA player name"
+            autocomplete="off"
+          />
+          <div id="suggestions-box" class="suggestions-box"></div>
+        </div>
+
+        <div class="button-row">
+          <button id="submit-guess-btn">Submit Guess</button>
+          <button id="hint-btn">Show Hint</button>
+          <button id="restart-btn">New Game</button>
+        </div>
+      </section>
+
+      <section class="status-section">
+        <p id="game-message">You have 8 guesses.</p>
+        <p id="guess-counter">Guesses Used: 0 / 8</p>
+      </section>
+
+      <section class="grid-section">
+        <div class="grid-header feedback-row">
+          <div class="cell">Player</div>
+           <div class="cell">Team</div>
+           <div class="cell">Conf</div>
+          <div class="cell">Position</div>
+          <div class="cell">Height</div>
+          <div class="cell">Age</div>
+          <div class="cell">Jersey</div>
+          <div class="cell">College</div>
+          <div class="cell" id="extra-header">Extra</div>
+        </div>
+
+        <div id="feedback-grid">
+          <!-- Guess rows will be added here with JavaScript -->
+        </div>
+      </section>
+
+      <section class="result-section">
+        <div id="result-box" class="result-box hidden">
+          <h2 id="result-title"></h2>
+          <p id="result-text"></p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <p class="signature">by kat1001</p>
+
+  <script src="script.js"></script>
+</body>
+
+<div id="leaderboard-modal" class="leaderboard-modal hidden">
+  <div class="leaderboard-content">
+    <h2>Daily Leaderboard</h2>
+    <p id="daily-score-summary"></p>
+    <div id="leaderboard-list"></div>
+    <button id="close-leaderboard-btn">Close</button>
+  </div>
+</div>
+
+</html>
